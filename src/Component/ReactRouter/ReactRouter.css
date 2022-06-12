@@ -1,0 +1,73 @@
+.loading{
+	font-size: 4.6rem;
+	color: red;
+	text-align: center;
+	margin: 0 auto;
+	text-overflow: ellipsis;
+	font-style: oblique;
+	font-weight: 900;
+}
+
+.loading_side{
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	width: 80%;
+	margin: 0 auto;
+	align-items: center;
+
+}
+.img{
+	width: 15rem;
+	height: 13rem;
+	object-fit: cover;
+	text-align: center;
+}
+
+.api_main{
+	padding: 2.3rem;
+	margin: 2rem;
+	background-color: #abac7f;
+	text-align: center;
+	transition:  all .3s;
+	
+}
+.api_main:hover{
+	transform: scale(1.1);
+}
+
+.main_navbar{
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 50px;
+}
+.nav{
+	display: flex;
+}
+
+.nav li{
+	margin: 20px 13px 0 13px;
+}
+
+.nav li a{
+	font-size: 1.4rem;
+	color: #fefefe;
+	transition: all .3s;
+}
+
+.nav li a:hover{
+	
+	color: #abac7f;
+}
+
+
+.right_navbar input{
+	margin: 20px 13px 0 13px;
+	padding: 0.765rem 2rem;
+	border-radius: 15px;
+	font-size: 1.2rem;
+	color: #373d20;
+	letter-spacing: 3px;
+}
+
+/* Hex Codes: #373d20, #717744, #abac7f, #fefefe, #080808 */
