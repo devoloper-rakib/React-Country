@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import Axios from './Axios';
 import './ReactRouter.css';
-const Navbar = (props) => {
-	const [meal, setMeal] = useState([]);
-	const [search, setSearch] = useState('');
-
+const Navbar = ({ setSearch }) => {
 	const handleChange = (event) => {
 		console.log(event.target.value);
 
@@ -14,21 +13,49 @@ const Navbar = (props) => {
 		<div>
 			<div className='main_navbar'>
 				<div className='left_navbar'>
-					<h1>Meal DB !</h1>
+					<h1>
+						<NavLink
+							to='/food'
+							className={({ isActive }) => (isActive ? 'active' : null)}
+							element={<Axios />}
+						>
+							Meal DB !
+						</NavLink>
+					</h1>
 				</div>
 				<div className='Middle_navbar'>
 					<ul className='nav'>
 						<li>
-							<a href='#'>Home</a>
+							<NavLink
+								to='/home'
+								className={(navInfo) => (navInfo.isActive ? 'active' : null)}
+							>
+								Home
+							</NavLink>
 						</li>
 						<li>
-							<a href='#'>Food</a>
+							<NavLink
+								to='/food'
+								className={({ isActive }) => (isActive ? 'active' : undefined)}
+							>
+								Food
+							</NavLink>
 						</li>
 						<li>
-							<a href='#'>About</a>
+							<NavLink
+								className={(nav) => (nav.isActive ? 'active' : '')}
+								to='/about'
+							>
+								About
+							</NavLink>
 						</li>
 						<li>
-							<a href='#'>Contact Us</a>
+							<NavLink
+								className={({ isActive }) => (isActive ? 'active' : null)}
+								to='/contact'
+							>
+								Contact
+							</NavLink>
 						</li>
 					</ul>
 				</div>
@@ -36,7 +63,6 @@ const Navbar = (props) => {
 					<input
 						type='text'
 						placeholder='Enter Your Food ...'
-						value={meal}
 						onChange={handleChange}
 					/>
 				</div>
